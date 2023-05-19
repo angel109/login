@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AutentifacionService } from './shared/servicios/autentifacion.service';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'login';
-}
+
+  constructor(private loginPrd:AutentifacionService){
+
+  }
+
+  public visualizarMenu():boolean{
+    return this.loginPrd.habilitarlogeo();
+  }
+  
+  }
+
+  
+
